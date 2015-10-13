@@ -1,6 +1,7 @@
 howl.aux.lpeg_lexer ->
   c = capture
   ident = (alpha + '_')^1 * (alpha + digit + '_')^0
+  ws = blank^0
 
   identifier = c 'identifier', ident
 
@@ -26,6 +27,9 @@ howl.aux.lpeg_lexer ->
 
   string = c 'string', span '"', '"', '\\'
 
+  typedef = c('keyword', word {'type', 'pkg'}) * blank^1 * c 'type_def', ident
+  fdecl = c('fdecl', ident) * ws * c('operator', '=') * ws * c 'operator', '{'
+
   char = span "'", "'", '\\'
   number = c 'number', any {
     float
@@ -43,6 +47,8 @@ howl.aux.lpeg_lexer ->
     string
     number
     comment
+    typedef
+    fdecl
     keyword
     type
     special
