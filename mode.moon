@@ -11,12 +11,12 @@
     "'": "'"
 
   indentation:
-    more_after: {r'{$', r'(if|for|while|match)\\b', r'pkg\\b.*=$'}
+    more_after: {r'{$', r'(if|for|while|match|struct|union)\\b', r'pkg\\b.*=$'}
     less_for: {r'}|;;$'}
 
   code_blocks:
     multiline: {
       {r'{$', '^%s*}', '}'}
-      {r'(if|for|while|match)\\b', '^%s*;;$', ';;'}
+      {r'(if|for|while|match|struct|union)\\b', '^%s*;;$', ';;'}
     }
 }
