@@ -6,9 +6,9 @@ howl.aux.lpeg_lexer ->
   identifier = c 'identifier', ident
 
   keyword = c 'keyword', word {
-    'castto', 'match', 'const', 'default', 'elif', 'else', 'export', 'extern',
-    'for', 'generic', 'goto', 'if', 'pkg', 'protect', 'sizeof', 'struct',
-    'trait', 'type', 'union', 'use', 'var', 'while'
+    'break', 'continue', 'castto', 'const', 'default', 'elif', 'else', 'export',
+    'extern', 'for', 'generic', 'goto', 'if', 'in', 'match', 'pkg', 'protect',
+    'sizeof', 'struct', 'trait', 'type', 'union', 'use', 'var', 'while'
   }
 
   type = c 'type', any {
